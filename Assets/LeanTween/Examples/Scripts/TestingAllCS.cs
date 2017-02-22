@@ -165,13 +165,6 @@ public class TestingAllCS : MonoBehaviour {
 		LeanTween.scale( ltLogo, new Vector3(currentScale.x+0.2f,currentScale.y+0.2f,currentScale.z+0.2f), 1f ).setEase(LeanTweenType.easeOutBounce).setUseEstimatedTime(useEstimatedTime);
 	}
 	
-	public void updateValueExample(){
-		Debug.Log("updateValueExample");
-		Hashtable pass = new Hashtable();
-		pass.Add("message", "hi");
-		LeanTween.value( gameObject, updateValueExampleCallback, ltLogo.transform.eulerAngles.y, 270f, 1f ).setEase(LeanTweenType.easeOutElastic).setOnUpdateParam(pass).setUseEstimatedTime(useEstimatedTime);
-	}
-	
 	public void updateValueExampleCallback( float val, object hash ){
 		// Hashtable h = hash as Hashtable;
 		// Debug.Log("message:"+h["message"]+" val:"+val);

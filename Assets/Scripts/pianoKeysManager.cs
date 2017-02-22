@@ -7,6 +7,7 @@ public class pianoKeysManager : MonoBehaviour
     public DisplacementController wavesController;
     public float tweenTime = 0.25f;
     public GameObject[] pianoKeys;
+    public pianoKeyController[] pianoKeysController;
 
     void Update ()
     {
@@ -37,7 +38,7 @@ public class pianoKeysManager : MonoBehaviour
 
         for (int i = 0; i < pianoKeys.Length; i++)
         {
-            if (pianoKeys[i].GetComponent<pianoKeyController>().isKeyDown)
+            if (pianoKeysController[i].isKeyDown)
             {
                 float result = Map(0f, -0.2f, 0f, 0.25f, pianoKeys[i].transform.localPosition.y);
                 newDisplacementValue += result;
