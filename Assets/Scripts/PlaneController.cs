@@ -11,7 +11,7 @@ public class PlaneController : MonoBehaviour
     [Range(64, 256)]
     public int segments = 64;
 
-    void Update()
+    void Start()
     {
         MeshData meshData = MeshGenerator.GenerateTerrainMesh(segments, segments);
 

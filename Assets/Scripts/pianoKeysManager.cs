@@ -5,7 +5,7 @@ public class pianoKeysManager : MonoBehaviour
 
     public GameObject waves;
     public DisplacementController wavesController;
-    public float tweenTime = 0.25f;
+    public float tweenTime = 0f;
     public GameObject[] pianoKeys;
     public pianoKeyController[] pianoKeysController;
 
