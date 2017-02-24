@@ -11,25 +11,7 @@ public class pianoKeysManager : MonoBehaviour
 
     void Update ()
     {
-        handleMouseDown();
         checkPianoKeys();
-    }
-
-    void handleMouseDown()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                if (hit.collider.gameObject.CompareTag("PianoKey"))
-                {
-                    hit.collider.gameObject.GetComponent<pianoKeyController>().play();
-                }
-            }
-        }
     }
 
     void checkPianoKeys()

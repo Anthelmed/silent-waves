@@ -11,6 +11,11 @@ public class pianoKeyController : MonoBehaviour {
         isKeyDown = (transform.localPosition.y < 0f);
     }
 
+    void OnMouseDown()
+    {
+        play();
+    }
+
     public void play()
     {
         LeanTween.moveLocalY(gameObject, -0.2f, tweenTime).setEase(LeanTweenType.easeOutExpo).setOnComplete(playFinished);
