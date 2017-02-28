@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: 72571862d5306b947a3d1eb94616432a
+timeCreated: 1488227904
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: CAM
+    100002: Cloner
+    100004: Cloner_1
+    100006: Cloner_2
+    100008: Cloner_2_2
+    100010: Cloner_3
+    100012: Cube
+    100014: Cube_1
+    100016: Cube_1_2
+    100018: Cube_2
+    100020: Gertrude
+    100022: Gontran
+    100024: Hector
+    100026: Jack
+    100028: Louis
+    100030: "L\xE9on"
+    100032: Milan
+    100034: Null
+    100036: Pascal
+    100038: Paul
+    100040: Plane
+    100042: Plane_1
+    100044: Plane_2
+    100046: Robert
+    100048: //RootNode
+    400000: CAM
+    400002: Cloner
+    400004: Cloner_1
+    400006: Cloner_2
+    400008: Cloner_2_2
+    400010: Cloner_3
+    400012: Cube
+    400014: Cube_1
+    400016: Cube_1_2
+    400018: Cube_2
+    400020: Gertrude
+    400022: Gontran
+    400024: Hector
+    400026: Jack
+    400028: Louis
+    400030: "L\xE9on"
+    400032: Milan
+    400034: Null
+    400036: Pascal
+    400038: Paul
+    400040: Plane
+    400042: Plane_1
+    400044: Plane_2
+    400046: Robert
+    400048: //RootNode
+    2300000: Cloner
+    2300002: Cloner_1
+    2300004: Cloner_2
+    2300006: Cloner_2_2
+    2300008: Cloner_3
+    2300010: Cube
+    2300012: Cube_1
+    2300014: Cube_1_2
+    2300016: Cube_2
+    2300018: Gertrude
+    2300020: Gontran
+    2300022: Hector
+    2300024: Jack
+    2300026: Louis
+    2300028: "L\xE9on"
+    2300030: Milan
+    2300032: Pascal
+    2300034: Paul
+    2300036: Plane
+    2300038: Plane_1
+    2300040: Plane_2
+    2300042: Robert
+    3300000: Cloner
+    3300002: Cloner_1
+    3300004: Cloner_2
+    3300006: Cloner_2_2
+    3300008: Cloner_3
+    3300010: Cube
+    3300012: Cube_1
+    3300014: Cube_1_2
+    3300016: Cube_2
+    3300018: Gertrude
+    3300020: Gontran
+    3300022: Hector
+    3300024: Jack
+    3300026: Louis
+    3300028: "L\xE9on"
+    3300030: Milan
+    3300032: Pascal
+    3300034: Paul
+    3300036: Plane
+    3300038: Plane_1
+    3300040: Plane_2
+    3300042: Robert
+    4300000: Cloner_3
+    4300002: Cloner_2
+    4300004: Cloner
+    4300006: Cube_2
+    4300008: Cube_1
+    4300010: Cube
+    4300012: Jack
+    4300014: "L\xE9on"
+    4300016: Paul
+    4300018: Pascal
+    4300020: Louis
+    4300022: Plane_2
+    4300024: Robert
+    4300026: Milan
+    4300028: Gertrude
+    4300030: Gontran
+    4300032: Hector
+    4300034: Cloner_1
+    4300036: Cloner_2_2
+    4300038: Plane_1
+    4300040: Cube_1_2
+    4300042: Plane
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 3
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

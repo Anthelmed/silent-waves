@@ -1,38 +1,56 @@
-﻿Shader "FX/Surface Reflection"
-{
-	Properties
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+
+Shader "Glass" {
+	Properties{
+		_Cube("Reflection Map", Cube) = "" {}
+	}
+		SubShader{
+		Pass{
+		CGPROGRAM
+
+#pragma vertex vert  
+#pragma fragment frag 
+
+#include "UnityCG.cginc"
+
+		// User-specified uniforms
+		uniform samplerCUBE _Cube;
+
+	struct vertexInput {
+		float4 vertex : POSITION;
+		float3 normal : NORMAL;
+	};
+	struct vertexOutput {
+		float4 pos : SV_POSITION;
+		float3 normalDir : TEXCOORD0;
+		float3 viewDir : TEXCOORD1;
+	};
+
+	vertexOutput vert(vertexInput input)
 	{
-		_MainAlpha("MainAlpha", Range(0, 1)) = 1
-		_ReflectionAlpha("ReflectionAlpha", Range(0, 1)) = 1
-		_TintColor("Tint Color (RGB)", Color) = (1,1,1)
-		_MainTex("MainTex (RGBA)", 2D) = ""
-		_ReflectionTex("ReflectionTex", 2D) = "white" { TexGen ObjectLinear }
+		vertexOutput output;
+
+		float4x4 modelMatrix = unity_ObjectToWorld;
+		float4x4 modelMatrixInverse = unity_WorldToObject;
+
+		output.viewDir = mul(modelMatrix, input.vertex).xyz
+			- _WorldSpaceCameraPos;
+		output.normalDir = normalize(
+			mul(float4(input.normal, 0.0), modelMatrixInverse).xyz);
+		output.pos = mul(UNITY_MATRIX_MVP, input.vertex);
+		return output;
 	}
 
-		//Two texture cards: full thing
-		Subshader
+	float4 frag(vertexOutput input) : COLOR
 	{
-		Tags{ Queue = Transparent }
-		ZWrite Off
-		Colormask RGBA
-		Color[_TintColor]
-		Blend SrcAlpha OneMinusSrcAlpha
-		Pass
-	{
-		SetTexture[_ReflectionTex]{ constantColor(0,0,0,[_ReflectionAlpha]) matrix[_ProjMatrix] combine texture * previous, constant }
-	}
-		Pass
-	{
-		SetTexture[_MainTex]{ constantColor(0,0,0,[_MainAlpha]) combine texture * primary, texture * constant }
-	}
+		float refractiveIndex = 1.5;
+	float3 refractedDir = refract(normalize(input.viewDir),
+		normalize(input.normalDir), 1.0 / refractiveIndex);
+	return texCUBE(_Cube, refractedDir);
 	}
 
-		//Fallback: just main texture
-		Subshader
-	{
-		Pass
-	{
-		SetTexture[_MainTex]{ combine texture }
+		ENDCG
 	}
 	}
 }

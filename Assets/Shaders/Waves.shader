@@ -28,7 +28,7 @@
 		float noisePixel = tex2Dlod(_NoiseMap, float4(v.texcoord.xy * _SinTime * 2, 0, 0)).r * 0.15;
 		float noise = noisePixel * (1 + _DisplacementScale);
 		float displacementPixel = tex2Dlod(_DisplacementMap, float4(v.texcoord.xy, 0, 0)).r;
-		float displacement = displacementPixel * (_DisplacementScale * 3);
+		float displacement = displacementPixel * (_DisplacementScale * 3.5);
 		v.vertex.xyz += v.normal * (displacement > 0.01f) ? displacement + noise : displacement;
 	}
 
