@@ -1,28 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class pianoKeyController : MonoBehaviour {
+public class PianoKeyController : MonoBehaviour {
 
-    public float tweenTime = 0.3f;
+    public float tweenTimeUp = 0.1f;
+    public float tweenTimeDown = 0.3f;
     public bool isKeyDown = false;
+
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+    }
 
     void Update()
     {
         isKeyDown = (transform.localPosition.y < 0f);
     }
 
-    void OnMouseDown()
+    public void setKeyDown()
     {
-        play();
+        if (isKeyDown)
+        {
+            return;
+        }
+
+        audioSource.Play();
+        LeanTween.cancel(gameObject);
+        LeanTween.moveLocalY(gameObject, -0.2f, tweenTimeDown).setEase(LeanTweenType.easeOutExpo);
     }
 
-    public void play()
+    public void setKeyUp()
     {
-        LeanTween.moveLocalY(gameObject, -0.2f, tweenTime).setEase(LeanTweenType.easeOutExpo).setOnComplete(playFinished);
+        if (!isKeyDown)
+        {
+            return;
+        }
+
+        audioSource.Stop();
+        LeanTween.cancel(gameObject);
+        LeanTween.moveLocalY(gameObject, 0, tweenTimeUp).setEase(LeanTweenType.easeOutExpo).setOnComplete(resetLocalPosition);
     }
 
-    void playFinished()
+    void resetLocalPosition(object myObj)
     {
-        LeanTween.moveLocalY(gameObject, 0f, tweenTime).setEase(LeanTweenType.easeInExpo);
+        gameObject.transform.localPosition = new Vector3(0, 0, 0);
     }
 }
